@@ -38,6 +38,20 @@ T reduce(T initialValue,T (*combine)(T accumulator, T current),vector<T> inputVe
 	return summaryValue;
 }
 
+template<typename T>
+T transform(T element){
+	return element * element;
+}
+
+
+template<typename T>
+vector<T> map(T (*transform)(T element), vector<T> inputVector){
+	vector<T> myVector;
+	for(typename vector<T> ::iterator it = inputVector.begin(); it != inputVector.end(); it++){
+		myVector.push_back(transform(*it));
+	}
+	return myVector;
+}
 
 
 
